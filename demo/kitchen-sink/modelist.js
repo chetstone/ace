@@ -35,6 +35,7 @@ Mode.prototype.supportsFile = function(filename) {
 };
 
 var modesByName = {
+	notetaker:  ["Notetaker"    , "n|nt"],
     abap:       ["ABAP"         , "abap"],
     asciidoc:   ["AsciiDoc"     , "asciidoc"],
     c9search:   ["C9Search"     , "c9search_results"],

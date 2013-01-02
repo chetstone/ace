@@ -64,6 +64,7 @@ function makeHuge(txt) {
 }
 
 var docs = {
+    "docs/notetaker.nt": {name: "Notetaker", wrapped: true},
     "docs/AsciiDoc.asciidoc": "AsciiDoc",
     "docs/javascript.js": "JavaScript",
     "docs/clojure.clj": "Clojure",
