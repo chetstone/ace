@@ -62,6 +62,8 @@ var fillDropdown = util.fillDropdown;
 var bindCheckbox = util.bindCheckbox;
 var bindDropdown = util.bindDropdown;
 
+var ElasticTabstopsLite = require("ace/ext/elastic_tabstops_lite").ElasticTabstopsLite;
+
 /*********** create editor ***************************/
 var container = document.getElementById("editor-container");
 
@@ -360,30 +362,37 @@ bindCheckbox("read_only", function(checked) {
     env.editor.setReadOnly(checked);
 });
 
-var secondSession = null;
 bindDropdown("split", function(value) {
     var sp = env.split;
     if (value == "none") {
-        if (sp.getSplits() == 2) {
-            secondSession = sp.getEditor(1).session;
-        }
         sp.setSplits(1);
     } else {
         var newEditor = (sp.getSplits() == 1);
-        if (value == "below") {
-            sp.setOrientation(sp.BELOW);
-        } else {
-            sp.setOrientation(sp.BESIDE);
-        }
+        sp.setOrientation(value == "below" ? sp.BELOW : sp.BESIDE);        
         sp.setSplits(2);
 
         if (newEditor) {
-            var session = secondSession || sp.getEditor(0).session;
+            var session = sp.getEditor(0).session;
             var newSession = sp.setSession(session, 1);
             newSession.name = session.name;
         }
     }
 });
+
+
+bindCheckbox("elastic_tabstops", function(checked) {
+    env.editor.setOption("useElasticTabstops", checked);
+});
+
+
+function synchroniseScrolling() {
+    var s1 = env.split.$editors[0].session;
+    var s2 = env.split.$editors[1].session;
+    s1.on('changeScrollTop', function(pos) {s2.setScrollTop(pos)});
+    s2.on('changeScrollTop', function(pos) {s1.setScrollTop(pos)});
+    s1.on('changeScrollLeft', function(pos) {s2.setScrollLeft(pos)});
+    s2.on('changeScrollLeft', function(pos) {s1.setScrollLeft(pos)});
+}
 
 bindCheckbox("highlight_token", function(checked) {
     var editor = env.editor;
@@ -397,7 +406,9 @@ bindCheckbox("highlight_token", function(checked) {
 
 /************** dragover ***************************/
 event.addListener(container, "dragover", function(e) {
-    return event.preventDefault(e);
+    var types = e.dataTransfer.types;
+    if (types && Array.prototype.indexOf.call(types, 'Files') !== -1)
+        return event.preventDefault(e);
 });
 
 event.addListener(container, "drop", function(e) {

@@ -236,7 +236,7 @@ function jsFileList(path, filter) {
         filter = /_test/;
 
     return fs.readdirSync(path).map(function(x) {
-        if (x.slice(-3) == ".js" && !filter.test(x))
+        if (x.slice(-3) == ".js" && !filter.test(x) && !/\s/.test(x))
             return x.slice(0, -3);
     }).filter(function(x){ return !!x });
 }
@@ -268,9 +268,6 @@ function getWriteFilters(options, projectType) {
 
     if (options.filters)
         filters = filters.concat(options.filters);
-
-    if (projectType == "worker")
-        return filters;
 
     if (options.noconflict)
         filters.push(namespace(options.ns));
@@ -441,7 +438,7 @@ var buildAce = function(options) {
     if (options.shrinkwrap) {
         console.log('# combining files into one ---------');
         copy({
-          source: { root:targetDir, exclude:/^worker\-/ },
+          source: { root:targetDir, exclude:/(^|\\|\/)worker\-[^\\\/]*\.js$/ },
           dest: BUILD_DIR + '/ace-min.js'
         });
     }
