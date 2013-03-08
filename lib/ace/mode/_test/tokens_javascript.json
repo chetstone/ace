@@ -1,5 +1,197 @@
 [[
-   "regex_allowed",
+   "start",
+  ["comment","//test: tokenize 'standard' functions"]
+],[
+   "no_regex",
+  ["identifier","string"],
+  ["punctuation.operator","."],
+  ["support.function","charCodeAt"],
+  ["paren.lparen","("],
+  ["constant.numeric","23"],
+  ["paren.rparen",")"],
+  ["punctuation.operator",";"],
+  ["text"," "],
+  ["variable.language","document"],
+  ["punctuation.operator","."],
+  ["support.function.dom","getElementById"],
+  ["paren.lparen","("],
+  ["string","'test'"],
+  ["paren.rparen",")"],
+  ["punctuation.operator",";"],
+  ["text"," "],
+  ["storage.type","console"],
+  ["punctuation.operator","."],
+  ["support.function.firebug","log"],
+  ["paren.lparen","("],
+  ["string","'Here it is'"],
+  ["paren.rparen",")"],
+  ["punctuation.operator",";"],
+  ["string","\";"]
+],[
+   "no_regex",
+  ["identifier","test"],
+  ["punctuation.operator",":"],
+  ["text"," "],
+  ["comment.doc","/**tokenize doc*/"],
+  ["text"," "],
+  ["identifier","comment"]
+],[
+   "no_regex",
+  ["comment.doc","/**tokenize doc comment with "],
+  ["comment.doc.tag","@tag"],
+  ["comment.doc"," {}*/"]
+],[
+   "no_regex",
+  ["comment","//test: tokenize parens"]
+],[
+   "start",
+  ["text","    "],
+  ["storage.type","var"],
+  ["text"," "],
+  ["identifier","line"],
+  ["text"," "],
+  ["keyword.operator","="],
+  ["text"," "],
+  ["string","\"[{( )}]\""],
+  ["punctuation.operator",";"]
+],[
+   "start",
+  ["comment","//test tokenize arithmetic expression which looks like a regexp"]
+],[
+   "no_regex",
+  ["identifier","a"],
+  ["keyword.operator","/"],
+  ["identifier","b"],
+  ["keyword.operator","/"],
+  ["identifier","c"]
+],[
+   "no_regex",
+  ["identifier","a"],
+  ["keyword.operator","/="],
+  ["identifier","b"],
+  ["keyword.operator","/"],
+  ["identifier","c"]
+],[
+   "no_regex",
+  ["comment","//test tokenize reg exps"]
+],[
+   "no_regex",
+  ["identifier","a"],
+  ["keyword.operator","="],
+  ["string.regexp","/b/g"]
+],[
+   "no_regex",
+  ["identifier","a"],
+  ["keyword.operator","+"],
+  ["string.regexp","/b/g"]
+],[
+   "no_regex",
+  ["identifier","a"],
+  ["text"," "],
+  ["keyword.operator","="],
+  ["text"," "],
+  ["constant.numeric","1"],
+  ["text"," "],
+  ["keyword.operator","+"],
+  ["text"," "],
+  ["string.regexp","/2 "],
+  ["constant.language.escape","+"],
+  ["string.regexp"," 1/b"]
+],[
+   "no_regex",
+  ["identifier","a"],
+  ["keyword.operator","="],
+  ["string.regexp","/a/"],
+  ["text"," "],
+  ["keyword.operator","/"],
+  ["text"," "],
+  ["string.regexp","/a/"]
+],[
+   "no_regex",
+  ["keyword","case"],
+  ["text"," "],
+  ["string.regexp","/a/"],
+  ["punctuation.operator","."],
+  ["support.function","test"],
+  ["paren.lparen","("],
+  ["identifier","c"],
+  ["paren.rparen",")"]
+],[
+   "no_regex",
+  ["comment","//test tokenize multi-line comment containing a single line comment"]
+],[
+   "no_regex",
+  ["identifier","noRegex"]
+],[
+   "no_regex",
+  ["comment","/* foo // bar */"]
+],[
+   "start",
+  ["identifier","canBeRegex"],
+  ["punctuation.operator",";"]
+],[
+   "start",
+  ["comment","/* foo // bar */"]
+],[
+   "start",
+  ["comment","// test tokenize identifier with umlauts"]
+],[
+   "no_regex",
+  ["identifier","fu"],
+  ["punctuation.operator","?"],
+  ["identifier","e"]
+],[
+   "no_regex",
+  ["comment","// test // is not a regexp"]
+],[
+   "start",
+  ["paren.lparen","{"],
+  ["text"," "],
+  ["comment","// 123"]
+],[
+   "start",
+  ["comment","//test skipping escaped chars"]
+],[
+   "no_regex",
+  ["string","'Meh"],
+  ["constant.language.escape","\\\\"],
+  ["string","nNeh'"]
+],[
+   "no_regex",
+  ["storage.type","console"],
+  ["punctuation.operator","."],
+  ["support.function.firebug","log"],
+  ["paren.lparen","("],
+  ["string","'"],
+  ["constant.language.escape","\\\\"],
+  ["string","u1232Feh'"]
+],[
+   "qqstring",
+  ["string","\"test multiline\\"]
+],[
+   "no_regex",
+  ["string"," strings\""]
+],[
+   "no_regex",
+  ["identifier","a"],
+  ["keyword.operator","="],
+  ["text","'"]
+],[
+   "qqstring",
+  ["identifier","b"],
+  ["keyword.operator","="],
+  ["string","\"\\"]
+],[
+   "no_regex",
+  ["string","still a string"]
+],[
+   "no_regex",
+  ["text"," "]
+],[
+   "no_regex",
+  ["text"," "]
+],[
+   "start",
   ["storage.type","function"],
   ["text"," "],
   ["entity.name.function","foo"],
@@ -11,7 +203,7 @@
   ["text"," "],
   ["paren.lparen","{"]
 ],[
-   "regex_allowed",
+   "start",
   ["text","    "],
   ["keyword","for"],
   ["text"," "],
@@ -36,7 +228,7 @@
   ["text"," "],
   ["paren.lparen","{"]
 ],[
-   "regex_allowed",
+   "start",
   ["text","        "],
   ["support.function","alert"],
   ["paren.lparen","("],
@@ -53,31 +245,31 @@
   ["paren.rparen",")"],
   ["punctuation.operator",";"]
 ],[
-   "start",
+   "no_regex",
   ["text","    "],
   ["paren.rparen","}"],
   ["text","\t"],
   ["comment","// Real Tab."]
 ],[
-   "start",
+   "no_regex",
   ["paren.rparen","}"]
 ],[
-   "start"
+   "no_regex"
 ],[
-   "start",
+   "no_regex",
   ["identifier","regexp"],
   ["text"," "],
   ["keyword.operator","="],
   ["text"," "],
   ["string.regexp","/p"],
-  ["constant.language.escape","|"],
+  ["constant.language.delimiter","|"],
   ["string.regexp","p/"],
   ["text"," "],
   ["comment","// ends here"]
 ],[
-   "start"
+   "no_regex"
 ],[
-   "start",
+   "no_regex",
   ["identifier","r"],
   ["text"," "],
   ["keyword.operator","="],
@@ -108,21 +300,23 @@
   ["string.regexp","rr--rr"],
   ["constant.language.escape","$^(?:"],
   ["string.regexp","d"],
-  ["constant.language.escape","|"],
+  ["constant.language.delimiter","|"],
   ["string.regexp","s"],
   ["constant.language.escape",")(?="],
   ["string.regexp","a"],
-  ["constant.language.escape","|)(?!"],
+  ["constant.language.delimiter","|"],
+  ["constant.language.escape",")(?!"],
   ["string.regexp","y"],
-  ["constant.language.escape",")[]|"],
+  ["constant.language.escape",")[]"],
+  ["constant.language.delimiter","|"],
   ["invalid","$?"],
-  ["constant.language.escape","|"],
+  ["constant.language.delimiter","|"],
   ["invalid","^*"],
   ["string.regexp","/"],
   ["text"," "],
   ["identifier","o"]
 ],[
-   "start",
+   "no_regex",
   ["identifier","a"],
   ["keyword.operator","="],
   ["string.regexp","/a/"],
@@ -137,16 +331,16 @@
   ["text"," "],
   ["string.regexp","/ /"]
 ],[
-   "start",
+   "no_regex",
   ["text"," "],
   ["comment.doc","/************************************/"]
 ],[
-   "start",
+   "no_regex",
   ["comment.doc","/** total mess, tricky to highlight**/"]
 ],[
-   "start"
+   "no_regex"
 ],[
-   "regex_allowed",
+   "start",
   ["storage.type","function"],
   ["text"," "],
   ["paren.lparen","("],
@@ -161,10 +355,10 @@
    "doc-start",
   ["comment.doc","\t * docComment"]
 ],[
-   "start",
+   "no_regex",
   ["comment.doc","\t **/"]
 ],[
-   "start",
+   "no_regex",
   ["text","\t"],
   ["identifier","r"],
   ["text"," "],
@@ -175,7 +369,7 @@
   ["constant.language.escape","*"],
   ["string.regexp","/"]
 ],[
-   "start",
+   "no_regex",
   ["text","\t"],
   ["identifier","g"],
   ["text"," "],
@@ -207,7 +401,7 @@
   ["text"," "],
   ["constant.numeric","0x25"]
 ],[
-   "start",
+   "no_regex",
   ["text","\t"],
   ["identifier","t"],
   ["text"," "],
@@ -220,10 +414,10 @@
   ["string","''"],
   ["paren.rparen","]"]
 ],[
-   "start",
+   "no_regex",
   ["paren.rparen","}"]
 ],[
-   "regex_allowed",
+   "start",
   ["storage.type","function"],
   ["text"," "],
   ["paren.lparen","("],
@@ -231,50 +425,50 @@
   ["text"," "],
   ["paren.lparen","{"]
 ],[
-   "regex_allowed",
+   "start",
   ["text","\t"],
   ["comment","/* eee */"]
 ],[
-   "start",
+   "no_regex",
   ["paren.rparen","}"]
 ],[
-   "start"
+   "no_regex"
 ],[
    "qqstring",
   ["string","\"s\\"]
 ],[
-   "start",
+   "no_regex",
   ["string","s"],
   ["constant.language.escape","\\u7824"],
   ["string","sss"],
   ["constant.language.escape","\\u"],
   ["string","1\""]
 ],[
-   "start"
+   "no_regex"
 ],[
    "qstring",
   ["string","'\\"]
 ],[
-   "start",
+   "no_regex",
   ["string","string'"]
 ],[
-   "start"
+   "no_regex"
 ],[
-   "start",
+   "no_regex",
   ["text","'"]
 ],[
-   "start",
+   "no_regex",
   ["identifier","string"],
   ["text","'"]
 ],[
-   "start"
+   "no_regex"
 ],[
-   "start",
+   "no_regex",
   ["string","\"trailing space"],
   ["constant.language.escape","\\ "],
   ["string","  "]
 ],[
-   "start",
+   "no_regex",
   ["string","\"         \""],
   ["text","    "],
   ["keyword.operator","/"],
@@ -286,7 +480,7 @@
   ["keyword.operator","/"],
   ["identifier","g"]
 ],[
-   "start"
+   "no_regex"
 ],[
    "doc-start",
   ["comment.doc","/**"]
@@ -294,19 +488,19 @@
    "doc-start",
   ["comment.doc"," *doc"]
 ],[
-   "start",
+   "no_regex",
   ["comment.doc"," */"]
 ],[
-   "start"
+   "no_regex"
 ],[
-   "regex_allowed",
+   "start",
   ["identifier","a"],
   ["text"," "],
   ["keyword.operator","="],
   ["text"," "],
   ["paren.lparen","{"]
 ],[
-   "regex_allowed",
+   "start",
   ["text","\t"],
   ["string","'a'"],
   ["punctuation.operator",":"],
@@ -314,16 +508,17 @@
   ["identifier","b"],
   ["punctuation.operator",","]
 ],[
-   "start",
+   "no_regex",
   ["text","\t"],
   ["string","'g'"],
-  ["text",": "],
+  ["text",":"],
+  ["text"," "],
   ["storage.type","function"],
   ["paren.lparen","("],
   ["variable.parameter","t"],
   ["paren.rparen",")"]
 ],[
-   "start",
+   "no_regex",
   ["text","\t"],
   ["entity.name.function","gta"],
   ["punctuation.operator",":"],
@@ -334,12 +529,12 @@
   ["variable.parameter","b"],
   ["paren.rparen",")"]
 ],[
-   "start",
+   "no_regex",
   ["paren.rparen","}"]
 ],[
-   "start"
+   "no_regex"
 ],[
-   "start"
+   "no_regex"
 ],[
    "function_arguments",
   ["identifier","foo"],
@@ -357,14 +552,14 @@
   ["variable.parameter","b"],
   ["punctuation.operator",","]
 ],[
-   "start",
+   "no_regex",
   ["punctuation.operator","                          "],
   ["variable.parameter","c"],
   ["punctuation.operator",", "],
   ["variable.parameter","d"],
   ["paren.rparen",")"]
 ],[
-   "start",
+   "no_regex",
   ["storage.type","foo"],
   ["punctuation.operator","."],
   ["entity.name.function","d"],
@@ -377,7 +572,7 @@
   ["variable.parameter","b"],
   ["paren.rparen",")"]
 ],[
-   "start",
+   "no_regex",
   ["storage.type","foo"],
   ["punctuation.operator","."],
   ["entity.name.function","d"],
@@ -393,5 +588,5 @@
   ["string","\"string\""],
   ["text","   "]
 ],[
-   "start"
+   "no_regex"
 ]]
