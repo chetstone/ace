@@ -1,0 +1,57 @@
+[[
+   "start",
+  ["text","test: header with clipboard"]
+],[
+   "start",
+  ["markup.heading.1","#"],
+  ["markup.heading"," header this is "],
+  ["text","["],
+  ["nt_ve","vital"],
+  ["text","]["],
+  ["constant","ve"],
+  ["text","]"]
+],[
+   "allowBlock"
+],[
+   "start",
+  ["text","test: plain text with clipboard data"]
+],[
+   "start",
+  ["text","this is ordinary "],
+  ["text","["],
+  ["nt_nh","non-human specific"],
+  ["text","]["],
+  ["constant","nh"],
+  ["text","]"],
+  ["text"," language."]
+],[
+   "allowBlock"
+],[
+   "start",
+  ["text","test: clipboard data in list"]
+],[
+   "allowBlock"
+],[
+   "listblock",
+  ["markup.list","* list 1"]
+],[
+   "listblock",
+  ["markup.list","* list with "],
+  ["text","["],
+  ["nt_mi","miasm"],
+  ["text","]["],
+  ["constant","mi"],
+  ["text","]"]
+],[
+   "listblock",
+  ["markup.list","* list 3"]
+],[
+   "start"
+],[
+   "allowBlock"
+],[
+   "start",
+  ["text","plain text again."]
+],[
+   "allowBlock"
+]]

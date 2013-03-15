@@ -1,0 +1,14 @@
+test: header with clipboard
+# header this is [vital][ve]
+
+test: plain text with clipboard data
+this is ordinary [non-human specific][nh] language.
+
+test: clipboard data in list
+
+* list 1
+* list with [miasm][mi]
+* list 3
+
+
+plain text again.
