@@ -19,7 +19,6 @@ node_modules/
 jam/
 * *
 TAGS
-build.sh
 .git-ref
 npm-debug.log
 deps/
